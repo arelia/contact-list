@@ -3,14 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 import {getContacts} from './services/contacts';
 
-let text = getContacts.then(function (value) {
-  return value;
-})
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      contacts: [],
+    }
+  };
+
+  componentDidMount() {
+    getContacts.then(contacts => {
+      this.setState({contacts});
+    });
+  }
+
   render() {
-
-
     return (
       <div className="App">
         <header className="App-header">
@@ -25,6 +34,7 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
+            {this.state.contacts}
           </a>
         </header>
       </div>
