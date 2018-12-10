@@ -5,7 +5,7 @@ export const getContacts = new Promise((resolve, reject) => {
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-            resolve(this.responseText)
+            resolve(JSON.parse(this.responseText))
         }
     });
 
