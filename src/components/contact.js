@@ -32,11 +32,13 @@ export default class Contact extends Component {
         } = this.props.contactInfo;
 
         return (
-            <div key={id} className="Contact">
-                <p className='contactName'>{firstName} {lastName}</p>
-                <a className='contactEmail' href={`mailto:${email}`}>{email}</a>
-                <a className='contactPhone' href={`tel:${phone}`}>{phone}</a>
-                <hr />
+            <div>
+                <div key={id} className="Contact">
+                    <p className='contactName'>{firstName} {lastName}</p>
+                    {email && <a className='contactEmail' href={`mailto:${email}`}>{email}</a>}
+                    {phone && <a className='contactPhone' href={`tel:${phone}`}>{phone}</a>}
+                </div>
+                <hr className='contactRule'/>
             </div>
         );
     }
