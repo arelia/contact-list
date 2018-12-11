@@ -1,11 +1,11 @@
-export const getContacts = new Promise((resolve, reject) => {
+export const getData = new Promise((resolve, reject) => {
     var data = JSON.stringify(false);
 
     var xhr = new XMLHttpRequest();
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === this.DONE) {
-            resolve(JSON.parse(this.responseText))
+            resolve(JSON.parse(this.responseText));
         }
     });
 

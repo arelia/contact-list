@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {getContacts} from './services/contacts';
+import {getData} from './services/data';
 
 
 class App extends Component {
@@ -11,12 +11,13 @@ class App extends Component {
     this.state = {
       contacts: [],
     }
-  };
+  }
 
   componentDidMount() {
-    getContacts.then(contacts => {
-      this.setState({contacts});
+    getData.then(response => {
+      this.setState({contacts: response.contacts});
     });
+
   }
 
   render() {
@@ -34,7 +35,7 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
-            {this.state.contacts}
+            {/* {this.state.contacts} */}
           </a>
         </header>
       </div>
