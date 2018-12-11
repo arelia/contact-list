@@ -8,6 +8,8 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('should load more when button is clicked', () => {
-  
+it('should load more when button is clicked', () => { // TODO: resolve node error, add enzyme, write test
+  // let initialContacts = this.state.contacts;
+  // find and click button
+  // expect this.state.contacts === initialContacts + 20
 });
