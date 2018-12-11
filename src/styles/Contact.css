@@ -6,10 +6,17 @@
   padding: 20px;
 }
 
+@media (max-width: 650px) {
+  .Contact {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .contactRule {
-  width: 75%;  
 }
 
 .contactName {
   grid-row: 1/3;
+  font-weight: bold;
 }
