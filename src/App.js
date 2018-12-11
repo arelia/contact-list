@@ -19,7 +19,7 @@ class App extends Component {
 
  contactItems = contactsList => {
     return contactsList.map(contact => {
-      return <Contact contactInfo={contact} />
+      return <Contact key={contact.id} contactInfo={contact} />
     });
   }
 
