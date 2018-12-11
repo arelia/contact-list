@@ -38,7 +38,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         {this.contactItems(this.state.contacts)}
         <button onClick={this.loadContacts}>Load More</button>
       </div>
