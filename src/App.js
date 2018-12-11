@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 import {getData, getMoreData} from './services/data';
 
 import Contact from './components/contact'
