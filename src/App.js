@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {getData} from './services/data';
+import {getData, getMoreData} from './services/data';
 
 import Contact from './components/contact'
 
@@ -9,6 +9,7 @@ class App extends Component {
 
   state = {
     contacts: [],
+    page: 0,
   };
 
   componentDidMount() {
@@ -23,10 +24,23 @@ class App extends Component {
     });
   }
 
+  loadContacts = () => {
+    let currentPage = this.state.page;
+    currentPage++;
+
+    getMoreData(currentPage).then(response => {
+      this.setState({
+        contacts: [...this.state.contacts, ...response.contacts],
+        page: currentPage,
+      });
+    })
+  }
+
   render() {
     return (
       <div className="App">
         {this.contactItems(this.state.contacts)}
+        <button onClick={this.loadContacts}>Load More</button>
       </div>
     );
   }
